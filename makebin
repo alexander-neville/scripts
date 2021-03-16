@@ -1,27 +1,27 @@
 #!/bin/bash
 
-occurences=`ls $HOME/.local/bin | grep $1`
+existing_files=`ls $HOME/.local/bin | grep $1`
 confirmation="y"
 
-if [ -z "$occurences" ]; then
+if [ -z "$existing_files" ]; then
 
     echo "No conflicting binaries ..."
 
 else 
 
-    for i in $occurences;
+    for i in $existing_files;
     
     do
         if [[ $i = "$1" ]]; then
             
             echo "Conflicting binary in $HOME/.local/bin, proceed anyway? [y/n]: "
-            read confirmation
+            read user_confirmation
 
         fi
     done
 fi
 
-if [[ $confirmation = "y" ]]; then 
+if [[ $user_confirmation = "y" ]]; then 
 
     echo "Proceeding with installation ..."
     
