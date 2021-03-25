@@ -1,6 +1,6 @@
 #/bin/bash
 time_stamp=`date +"%H:%M:%S_%d-%m-%y"`
-file=~/pictures/screenshots/IMG_$time_stamp.png
+file=~/image/screenshots/IMG_$time_stamp.png
 import $file
 xclip -selection clipboard -t image/png -i $file
 
