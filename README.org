@@ -1,0 +1,6 @@
+#+TITLE: Scripts
+#+AUTHOR: Alexander Neville
+
+Shell scripts are used to make repetitive tasks easier. The shortest scripts in this repo could be compressed into a shell alias.
+
+It might be useful to add the scripts folder to your path so you can call the scripts from anywhere in the filesystem without the need to specify the path to the script.
