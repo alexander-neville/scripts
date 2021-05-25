@@ -3,9 +3,16 @@
 editor="emacsclient -c -a emacs"
 
 declare -a files=(
-"$HOME/.config/alacritty/alacritty.yml"
-"$HOME/.zshrc"
-"$HOME/.aliasrc"
+".config/alacritty/alacritty.yml"
+".config/qtile/config.py"
+".xmonad/xmonad.hs"
+".xmonad/xmobarrc"
+".config/doom/config.el"
+".config/nvim/init.vim"
+".zshrc"
+".zshenv"
+".aliasrc"
+".xinitrc"
 "quit"
 
 
@@ -19,6 +26,7 @@ if [[ "$choice" == "quit" ]]; then
 elif [ "$choice" ]; then
 
     file=$(printf '%s\n' "${choice}" | awk '{print $NF}')
+    path="$HOME/$file"
     $editor "$file"
 
 else
