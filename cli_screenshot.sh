@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/sh
 
 time_stamp=`date +"%H:%M:%S_%d-%m-%y"`
 file=~/image/screenshots/IMG_$time_stamp.png
