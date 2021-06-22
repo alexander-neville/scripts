@@ -2,10 +2,15 @@
 
 function ff(){
 
-    choice=$(echo "$(find ~/* \( -name '.git' -o -wholename '/home/alex/code/misc' \) -prune -false -o -type f)\nquit" | fzf)
-    if [[ $choice != "quit" ]]; then
+    choice=$(echo "$(find ~/* \( -name '.git' -o -name 'env' -o -wholename '/home/alex/code/misc' \) -prune -false -o -type f)\nquit" | fzf)
 
-        nvim $choice
+    if [[ ! -z "$choice" ]]; then
+
+        if [[ $choice != "quit" ]]; then
+
+            nvim $choice
+
+        fi
 
     fi
 
