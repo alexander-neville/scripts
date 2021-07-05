@@ -1,44 +1,51 @@
 #!/bin/bash
 
+# Variables
 rofi_command="rofi -theme $HOME/.config/rofi/themes/theme_switcher.rasi"
+theme_dir="$HOME/.Xresources.d/themes_available/"
+theme_file="$HOME/.Xresources.d/colours"
 
-# Themes
+# Options
 theme_1="Nord"
 theme_2="Gruvbox"
 theme_3="Dracula"
-theme_4="Forest"
-theme_5="Cyberpunk"
-theme_6="Groot"
-theme_7="Blade"
-theme_8="Rick"
+theme_4="Marine"
+theme_5="Forest"
+theme_6="Solarized"
+theme_7="Purple"
+theme_8="Pink"
+theme_9="Blue"
 
 # Variable passed to rofi
-options="$theme_1\n$theme_2\n$theme_3\n$theme_4\n$theme_5\n$theme_6\n$theme_7\n$theme_8"
+options="$theme_1\n$theme_2\n$theme_3\n$theme_4\n$theme_5\n$theme_6\n$theme_7\n$theme_8\n$theme_9"
 
 chosen="$(echo -e "$options" | $rofi_command -p "Available Themes" -dmenu -selected-row 0)"
 case $chosen in
     $theme_1)
-        set_xresources.sh nord
+        cat $theme_dir/nord > $theme_file
         ;;
     $theme_2)
-        set_xresources.sh gruvbox
+        cat $theme_dir/gruvbox > $theme_file
         ;;
     $theme_3)
-        set_xresources.sh dracula
+        cat $theme_dir/dracula > $theme_file
         ;;
     $theme_4)
-        set_xresources.sh forest
+        cat $theme_dir/marine > $theme_file
         ;;
     $theme_5)
-        set_xresources.sh cyberpunk
+        cat $theme_dir/forest > $theme_file
         ;;
     $theme_6)
-        set_xresources.sh groot
+        cat $theme_dir/solarized > $theme_file
         ;;
     $theme_7)
-        set_xresources.sh blade
+        cat $theme_dir/purple > $theme_file
         ;;
     $theme_8)
-        set_xresources.sh rick
+        cat $theme_dir/pink > $theme_file
+        ;;
+    $theme_9)
+        cat $theme_dir/blue > $theme_file
         ;;
 esac
