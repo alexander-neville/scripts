@@ -1,6 +1,6 @@
 #!/bin/sh
 
-editor="emacsclient -c -a emacs"
+editor="emacs"
 
 declare -a files=(
 ".config/alacritty/alacritty.yml"
@@ -27,7 +27,7 @@ elif [ "$choice" ]; then
 
     file=$(printf '%s\n' "${choice}" | awk '{print $NF}')
     path="$HOME/$file"
-    $editor "$file"
+    exec $editor $file
 
 else
 

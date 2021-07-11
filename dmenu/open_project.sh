@@ -26,7 +26,7 @@ elif [ "$choice" ]; then
 
     path="$HOME/code/$choice"
     # command="$editor --eval '(dired \"$path\")'"
-    $editor "$path"
+    $editor $path
 
 else
 
