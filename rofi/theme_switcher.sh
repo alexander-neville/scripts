@@ -12,12 +12,13 @@ theme_3="Dracula"
 theme_4="Marine"
 theme_5="Forest"
 theme_6="Solarized"
-theme_7="Purple"
+theme_7="OneDark"
 theme_8="Pink"
 theme_9="Blue"
+theme_10="Purple"
 
 # Variable passed to rofi
-options="$theme_1\n$theme_2\n$theme_3\n$theme_4\n$theme_5\n$theme_6\n$theme_7\n$theme_8\n$theme_9"
+options="$theme_1\n$theme_2\n$theme_3\n$theme_4\n$theme_5\n$theme_6\n$theme_7\n$theme_8\n$theme_9\n$theme_10"
 
 chosen="$(echo -e "$options" | $rofi_command -p "Available Themes" -dmenu -selected-row 0)"
 case $chosen in
@@ -40,12 +41,15 @@ case $chosen in
         cat $theme_dir/solarized > $theme_file
         ;;
     $theme_7)
-        cat $theme_dir/purple > $theme_file
+        cat $theme_dir/onedark > $theme_file
         ;;
     $theme_8)
         cat $theme_dir/pink > $theme_file
         ;;
     $theme_9)
         cat $theme_dir/blue > $theme_file
+        ;;
+    $theme_10)
+        cat $theme_dir/purple > $theme_file
         ;;
 esac
