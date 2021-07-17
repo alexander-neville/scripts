@@ -9,7 +9,7 @@ window=""
 
 options="$screen\n$clipboard\n$area\n$window"
 
-chosen="$(echo -e "$options" | $rofi_command -p 'Screenshot Tool' -dmenu -selected-row 1)"
+chosen="$(echo -e "$options" | $rofi_command -p 'Screenshot Tool' -dmenu -selected-row 0)"
 case $chosen in
     $screen)
         scrot 'img_%d-%m-%Y_%H:%M:%S_$wx$h.png' -e 'xclip -selection clipboard -t image/png -i $f ; mv $f $$(xdg-user-dir PICTURES)/screenshots'

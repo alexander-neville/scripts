@@ -53,3 +53,6 @@ case $chosen in
         cat $theme_dir/purple > $theme_file
         ;;
 esac
+
+xrdb ~/.Xresources
+deploy_xresources.sh

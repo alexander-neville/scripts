@@ -109,11 +109,11 @@ launcher_colours () {
 main () {
 
     # run all the functions.
-
 	get_colours
 	bar_colours
 	term_colours
 	launcher_colours
+
 }
 
 main
